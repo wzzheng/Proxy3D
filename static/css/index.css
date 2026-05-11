@@ -222,6 +222,16 @@ body {
   margin: 0.35em 0 0;
 }
 
+.hero-venue {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #4e4c4c;
+}
+
 /* Institution logos: below affiliations, with hover effect like OmniVGGT */
 .hero-logos {
   display: flex;
