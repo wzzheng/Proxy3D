@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment">
+  <meta property="og:title" content="Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment"/>
+  <meta property="og:description" content="Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment."/>
+  <meta property="og:url" content="https://liuff19.github.io/Spatial-TTT/"/>
+  <meta property="og:image" content="static/images/teaser.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:title" content="Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment">
+  <meta name="twitter:description" content="Streaming visual-based spatial intelligence with test-time training.">
+  <meta name="twitter:image" content="static/images/teaser.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="Spatial Intelligence, Test-Time Training, MLLM, Video Understanding, 3D Scene">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment</title>
+  <link rel="icon" type="image/x-icon" href="">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="static/css/index.css?v=4">
+</head>
+<body>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        <span class="title-line1"><span class="title-project">Proxy3D</span><span class="title-rest">: Efficient 3D Representations for Vision-Language Models</span></span>
+        <span class="title-line2"><span class="title-rest">via Semantic Clustering and Alignment</span></span>
+      </h1>
+      <div class="hero-authors">
+        <div class="author-list">
+          <a href="https://github.com/Spacedreamer2384">Jerry Jiang</a><sup>1,*</sup>,
+          <a href="https://scholar.google.com/citations?user=tGepc6EAAAAJ">Haowen Sun</a><sup>1,*</sup>,
+          <a href="https://gudovskiy.github.io/">Denis Gudovskiy</a><sup>2</sup>,
+          <a href="https://scholar.google.com/citations?user=MA5f-rYAAAAJ">Yohei Nakata</a><sup>3</sup>,
+          <a href="https://scholar.google.com/citations?user=E7BhgRsAAAAJ">Tomoyuki Okuno</a><sup>3</sup>,<br>
+          <a href="https://www2.eecs.berkeley.edu/Faculty/Homepages/keutzer.html">Kurt Keutzer</a><sup>4</sup>,
+          <a href="https://wzzheng.github.io/">Wenzhao Zheng</a><sup>4,†</sup>
+        </div>
+        <div class="hero-affiliations">
+          <sup>1</sup>Tsinghua University &nbsp; <sup>2</sup>Panasonic AI Lab &nbsp; <sup>3</sup>Panasonic DX-CPS &nbsp; <sup>4</sup>UC Berkeley
+        </div>
+        <div class="hero-notes"><sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding author</div>
+      </div>
+      <div class="hero-logos">
+        <a href="https://www.tsinghua.edu.cn" target="_blank" rel="noopener" class="hero-logo-link" aria-label="Tsinghua University">
+          <img src="static/images/tsinghua-logo.png" alt="Tsinghua University" class="hero-logo-img logo-tsinghua">
+        </a>
+        <a href="https://tech-ai.panasonic.com" target="_blank" rel="noopener" class="hero-logo-link" aria-label="Panasonic">
+          <img src="static/images/panasonic_logo.png" alt="Panasonic" class="hero-logo-img logo-panasonic">
+        </a>
+        <a href="https://www.berkeley.edu" target="_blank" rel="noopener" class="hero-logo-link" aria-label="UC Berkeley">
+          <img src="static/images/ucb_logo.png" alt="UC Berkeley" class="hero-logo-img logo-berkeley ">
+        </a>
+      </div>
+      <div class="hero-links">
+        <a href="https://arxiv.org/abs/2605.xxxxx" class="hero-link" target="_blank" rel="noopener"><span class="icon ai ai-arxiv"></span> arXiv</a>
+        <a href="https://github.com/Spacedreamer2384/Proxy3D" class="hero-link" target="_blank" rel="noopener"><span class="icon"><i class="fa-brands fa-github"></i></span> Code</a>
+        <!-- <a class="hero-link hero-link-disabled" aria-disabled="true" tabindex="-1" rel="noopener"><span class="icon"><img src="static/images/hf-logo.png" alt="HF" class="hf-logo"></span> Model (Coming Soon)</a> -->
+        <a href="https://huggingface.co/datasets/Spacewanderer8263/Proxy3D-SpaceSpan-318K" class="hero-link" target="_blank" rel="noopener"><span class="icon"><img src="static/images/hf-logo.png" alt="HF" class="hf-logo"></span> Dataset</a>
+        <a href="https://huggingface.co/Spacewanderer8263/Proxy3D-8B/tree/main" class="hero-link" target="_blank" rel="noopener"><span class="icon"><img src="static/images/hf-logo.png" alt="HF" class="hf-logo"></span> Model</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Teaser -->
+  <section class="section section-teaser">
+    <div class="container">
+      <div class="teaser-wrap">
+        <img src="static/images/teaser.png?v=2" alt="Proxy3D Teaser" class="teaser-img">
+        <p class="teaser-caption">
+          <strong>Proxy3D:</strong> We propose Proxy3D, a feature aggregation method that produces compact yet comprehensive proxy representations for 3D scene understanding. Proxy3D maintains and updates spatial state from streaming video chunks, then answers spatial questions. We also introduce multi-stage training with iterative development of 3D reasoning skills, and  SpaceSpan dataset with the unified data format has incorporated heterogeneous visual information.
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract -->
+  <section class="section section-abstract">
+    <div class="container container-narrow">
+      <h2 class="section-title">Abstract</h2>
+      <div class="abstract-text">
+        <p>
+         Spatial intelligence in vision-language models (VLMs) attracts research interest with the practical demand to reason in the 3D world.Despite promising results, most existing methods follow the conventional 2D pipeline in VLMs and use pixel-aligned representations for the vision modality. However, correspondence-based models with implicit 3D scene understanding often fail to achieve spatial consistency, and representation-based models with 3D geometric priors lack efficiency in vision sequence serialization. To address this, we propose a Proxy3D method with compact yet comprehensive 3D proxy representations for the vision modality. Given only video frames as input, we employ semantic and geometric encoders to extract scene features and then perform their semantic-aware clustering to obtain a set of proxies in the 3D space. For representation alignment, we further curate the SpaceSpan dataset and apply multi-stage training to adopt the proposed 3D proxy representations with the VLM. When using shorter sequences for vision information, our method achieves competitive or state-of-the-art performance in 3D visual question answering, visual grounding and general spatial intelligence benchmarks.        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Demo
+  <section class="section section-video">
+    <div class="container container-narrow">
+      <h2 class="section-title">Video</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/U7gLdwCj6tY" 
+                title="Spatial-TTT Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-caption">
+        <strong>Spatial-TTT</strong> maintains and updates spatial evidence from streaming video, enabling accurate spatial reasoning over long-horizon egocentric observations.
+      </p>
+    </div>
+  </section> -->
+
+  <!-- Key Contributions -->
+  <section class="section section-contributions">
+    <div class="container">
+      <h2 class="section-title">Key Contributions</h2>
+      <!-- <p class="section-lead"></p> -->
+      <div class="contrib-grid">
+        <article class="contrib-card">
+          <div class="contrib-icon">📑</div>
+          <h3>Unified Reasoning Dataset</h3>
+          <p>We curate a 318K SpaceSpan dataset with the unified data format that incorporates heterogeneous visual information for the improvement spatial reasoning skills.</p>
+        </article>
+        <article class="contrib-card">
+          <div class="contrib-icon">🛠️</div>
+          <h3>Proxy-based 3D Aggregation</h3>
+          <p>We propose a method for aggregating compact yet comprehensive representations for spatial reasoning by leveraging latent-space clustering as proxies.</p>
+        </article>
+        <article class="contrib-card">
+          <div class="contrib-icon">📚</div>
+          <h3>Iteratively Multi-Stage Training</h3>
+          <p> We introduce a multi-stage training pipeline that iteratively improves the MLLM's 3D scene understanding with the data-efficient representation alignment.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method Overview -->
+  <section class="section section-method">
+    <div class="container">
+      <h2 class="section-title">Method Overview</h2>
+      <div class="figure-block">
+        <img src="static/images/pipeline.png" alt="Proxy pipeline" class="figure-img">
+        <p class="figure-caption">
+          <strong>Overview of Proxy3D structure.</strong>  A geometry predictor and a semantic encoder output latent features of vision modality. Then, our proxy 3D representations are clustered to reduce complexity. Lastly, multi-stage training aligns proxy features with the language model.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- <h2 class="section-title">Multi-stage Training</h2> -->
+      <div class="figure-block">
+        <img src="static/images/training.png" alt="Multi-stage Training" class="figure-img">
+        <p class="figure-caption">
+          <strong>Overview of multi-stage training.</strong> Each stage in our progressive iterative training aims to develop a certain spatial intelligence skill from the easiest one to more complex ones: we begin with the simplified image-text alignment to actual images with spatial reasoning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experimental Results -->
+  <section class="section section-results">
+    <div class="container">
+      <h2 class="section-title">Experimental Results</h2>
+      <p class="section-lead">Comprehensive empirical evaluations using various 3D scene understanding tasks have shown competitive or state-of-the-art performance for Proxy3D while using shorter sequences for visual modality.</p>
+
+      <div class="result-block">
+        <h3 class="result-heading">3D Question Answering, Visual Grounding and Dense Captioning</h3>
+        <p class="result-desc">We follow the standard evaluation methodology for all benchmarks. We categorize models by their type, used vision modalities (P-point clouds, I-images, B-bird’s-eye-view map, D-depth), sequence length L (# of tokens). The best and the second best results are highlighted. Our Proxy3D with Qwen2.5-VL backbone shows competitive or state-of-the-art results with the shortest sequence lengths. ”‡” means usage of extra information from point clouds.</p>
+        <div class="figure-block">
+          <img src="static/images/experiment_main_1.png" alt="Main Experiment comparison" class="figure-img">
+        </div>
+      </div>
+
+      <div class="result-block">
+        <h3 class="result-heading">VSI Bench</h3>
+        <p class="result-desc">We use 16 frames as input for Qwen2.5VL-based baselines and, following the VSI-Bench setup, other open-source and proprietary models use from 16 to 32 image frames. The best and the second best results for open-source models are highlighted. Our Proxy3D with Qwen2.5-VL-7B backbone shows overall the second best result. At the same time, the gap with the human-level performance remains significant in spatial reasoning certain tasks. ”‡” indicates tasks not specifically trained.</p>
+        <div class="figure-block">
+          <img src="static/images/experiment_vsi.png" alt="VSI Bench comparison" class="figure-img">
+        </div>
+      </div>
+
+      <!-- <div class="result-block">
+        <h3 class="result-heading">Memory & Compute Scaling</h3>
+        <p class="result-desc">Peak decoding memory and theoretical TFLOPs vs input length (352×480). Spatial-TTT scales near-linearly; at 1024 frames it achieves over 40% reduction in both TFLOPs and memory compared to Qwen3-VL-2B.</p>
+        <div class="figure-block">
+          <img src="static/images/peak_mem_tflops.png" alt="Peak memory and TFLOPs" class="figure-img">
+        </div>
+      </div> -->
+  </section>
+
+  <!-- Citation -->
+  <section class="section section-citation">
+    <div class="container container-narrow">
+      <h2 class="section-title">Citation</h2>
+      <pre class="bibtex"><code>@article{proxy3d2026,
+  title     = {Proxy3D: Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment},
+  author    = {Jiang, Jerry and Sun, Haowen and Gudovskiy, Denis and Nakata, Yohei and Okuno, Tomoyuki and Keutzer, Kurt and Zheng Wenzhao},
+  journal   = {arXiv preprint arXiv:2605.xxxxx},
+  year      = {2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2026 Proxy3D Project · Tsinghua University, Panasonic AI, UC Berkeley</p>
+      <p class="footer-text footer-sub">Efficient 3D Representations for Vision-Language Models via Semantic Clustering and Alignment</p>
+    </div>
+  </footer>
+
+  <script src="static/js/index.js"></script>
+</body>
+</html>
